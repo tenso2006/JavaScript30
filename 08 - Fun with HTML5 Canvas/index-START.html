@@ -25,9 +25,13 @@
     // stop the fn from running when it is not mouse down
     console.log(e);
     ctx.beginPath();
+    //start from
     ctx.moveTo(lastX, lastY);
+    //go till
+
     ctx.lineTo(e.offsetX, e.offsetY);
     ctx.stroke();
+    [lastX, lastY] = [e.offsetX, e.offsetY];
   }
 
   canvas.addEventListener('mousemove', draw);
